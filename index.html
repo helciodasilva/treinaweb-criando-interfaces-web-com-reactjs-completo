@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Hello World</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div id="app">
+        <!-- Nosso aplicativo irá renderizar aqui -->
+    </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
+<script>
+    var minhaDiv = document.getElementById("app");
+    ReactDOM.render(
+        React.DOM.h1({id: "meuTitulo"}, "Hello World!"),
+        minhaDiv
+    );
+</script>
+</body>
+</html>

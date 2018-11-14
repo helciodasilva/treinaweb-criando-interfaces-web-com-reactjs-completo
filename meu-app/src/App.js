@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TextCounter from './TextCounter.js';
 
 class App extends Component {
   render() {
+    var abc = "TreinaWeb";
     return (
       <div className="App">
         <header className="App-header">
@@ -20,6 +22,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <TextCounter title={abc} />
       </div>
     );
   }

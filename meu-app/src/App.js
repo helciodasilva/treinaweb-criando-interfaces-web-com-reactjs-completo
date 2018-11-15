@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import TextCounter from './TextCounter.js';
-import {MyList, MyListItem} from './MyList';
+import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
-    var abc = "TreinaWeb";
     return (
-      <div className="App">
-        <MyList></MyList>
+      <div>
+        <header>App</header>
+        <menu>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about/abc">About 1</Link></li>
+                <li><Link to="/about/def">About 2</Link></li>
+            </ul>
+        </menu>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom'
 import Events from 'events';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 var Channel = new Events.EventEmitter();
 
@@ -52,11 +53,16 @@ export class MyList extends React.Component{
                 <input type="text" ref="itemText" />
                 <button onClick={this.addItem.bind(this)} >Adicionar</button>
                 <ul>
-                {
-                    state.items.map((child, index)=>{
-                        return <MyListItem onClick={this.childClick.bind(this)} color="red" text={item.children} index={index} key={index}  />
-                    })
-                }
+                    <CSSTransitionGroup
+                        transitionName="myList"
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={300}>
+                    {
+                            state.items.map((child, index)=>{
+                                return <MyListItem onClick={this.childClick.bind(this)} color="red" text={item.children} index={index} key={index}  />
+                            })
+                    }
+                    </CSSTransitionGroup>
                 </ul>
             </div>
         );
